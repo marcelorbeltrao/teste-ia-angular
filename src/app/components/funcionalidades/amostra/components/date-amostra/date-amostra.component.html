@@ -1,0 +1,33 @@
+<mat-card class="padding-top-4">
+  <mat-card-content>
+    <div class="ss-grid">
+      <form [formGroup]="formbirthdayData" class="col-6">
+        <mat-form-field>
+          <!-- Uso do atributo aria-label para fornecer uma descrição acessível -->
+          <mat-label aria-label="Seleção de data">Seleção de data</mat-label>
+          <input matInput [matDatepicker]="birthdayData" placeholder="Data" formControlName="birthdayData"
+            aria-labelledby="birthdayLabel">
+          <!-- Adicionando o atributo id ao mat-datepicker-toggle para vincular com aria-labelledby -->
+          <mat-datepicker-toggle matSuffix [for]="birthdayData" aria-labelledby="birthdayLabel"></mat-datepicker-toggle>
+          <mat-datepicker #birthdayData [dateClass]="dateClass"></mat-datepicker>
+        </mat-form-field>
+      </form>
+      <form [formGroup]="dateRange" class="date-range-form" class="col-6">
+        <mat-form-field class="col-6">
+          <mat-label>Intervalo entre datas</mat-label>
+          <mat-date-range-input [rangePicker]="rangePicker">
+            <input matStartDate placeholder="De" formControlName="start">
+            <input matEndDate placeholder="Até" formControlName="end">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+          <mat-date-range-picker #rangePicker>
+            <mat-date-range-picker-actions>
+              <button mat-button matDateRangePickerCancel>Cancelar</button>
+              <button mat-raised-button color="primary" matDateRangePickerApply>Aplicar</button>
+            </mat-date-range-picker-actions>
+          </mat-date-range-picker>
+        </mat-form-field>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

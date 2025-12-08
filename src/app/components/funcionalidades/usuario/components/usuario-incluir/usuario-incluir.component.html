@@ -1,0 +1,93 @@
+<sc-actionbar width="medium" [title]="'LBL_USER_DETAIL_TITLE' | translate">
+  <form [formGroup]="userForm" novalidate (ngSubmit)="onSubmit(userForm)">
+
+    <mat-form-field subscriptSizing="dynamic">
+      <mat-label>{{ 'LBL_USER_COOPERATIVE' | translate }}</mat-label>
+      <input matInput formControlName="company">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <div class="ss-grid">
+      <mat-form-field class="col-6">
+        <mat-label>{{ 'LBL_USER_FIRST_NAME' | translate }}</mat-label>
+        <input matInput formControlName="firstName">
+        <mat-error *ngIf="userForm.controls['firstName'].hasError('required')">
+          {{ 'LBL_USER_FIRST_NAME_REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-6">
+        <mat-label>{{ 'LBL_USER_LAST_NAME' | translate }}</mat-label>
+        <input matInput formControlName="lastName">
+        <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
+          {{ 'LBL_USER_LAST_NAME_REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-6">
+        <mat-label>{{ 'LBL_USER_TELEPHONE' | translate }}</mat-label>
+        <input matInput formControlName="telephone" mask="(00) 0000-0000 || (00) 00000-0000" />
+        <mat-error *ngIf="userForm.controls['telephone'].hasError('required')">
+          {{ 'LBL_USER_TELEPHONE_REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-6">
+        <mat-label>{{ 'LBL_USER_MAIL' | translate }}</mat-label>
+        <input matInput formControlName="email" />
+        <mat-error *ngIf="userForm.controls['email'].hasError('required')">
+          {{ 'LBL_USER_MAIL_REQUIRED' | translate }}
+        </mat-error>
+        <mat-error *ngIf="userForm.controls['email'].hasError('email')">
+          {{ 'LBL_USER_MAIL_INVALID' | translate }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label>{{ 'LBL_USER_ADDRESS' | translate }}</mat-label>
+      <textarea matInput formControlName="address"></textarea>
+      <mat-error *ngIf="userForm.controls['address'].hasError('required')">
+        {{ 'LBL_USER_ANDDRESS_REQUIRED' | translate }}
+      </mat-error>
+    </mat-form-field>
+
+    <button *ngIf="!hasUnitNumber" mat-stroked-button type="button" (click)="hasUnitNumber = !hasUnitNumber"
+      class="margin-bottom-3">
+      {{ 'LBL_USER_COMPLEMENT_ADD' | translate }}
+    </button>
+    <mat-form-field class="col-12" *ngIf="hasUnitNumber">
+      <mat-label>{{ 'LBL_USER_COMPLEMENT' | translate }}</mat-label>
+      <textarea matInput formControlName="complement"></textarea>
+    </mat-form-field>
+    <div class="ss-grid">
+      <mat-form-field class="col-6">
+        <mat-label>{{ 'LBL_USER_CITY' | translate }}</mat-label>
+        <input matInput formControlName="city">
+        <mat-error *ngIf="userForm.controls['city'].hasError('required')">
+          {{ 'LBL_USER_CITY_REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-6">
+        <mat-label>{{ 'LBL_USER_STATE' | translate }}</mat-label>
+        <mat-select formControlName="state">
+          <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+            {{ state.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="userForm.controls['state'].hasError('required')">
+          {{ 'LBL_USER_STATE_REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label>CEP</mat-label>
+      <input matInput #postalCode maxlength="9" type="text" formControlName="postalCode" mask="00000-000">
+      <mat-hint *ngIf="postalCode.value.length > 0">{{ userForm.get("postalCode").value.length }} / 8</mat-hint>
+    </mat-form-field>
+    <mat-radio-group formControlName="shipping">
+      <mat-radio-button value="free">Usuário tipo 1</mat-radio-button>
+      <mat-radio-button value="priority">Usuário tipo 2</mat-radio-button>
+      <mat-radio-button value="nextday">Usuário tipo 3</mat-radio-button>
+    </mat-radio-group>
+    <mat-divider></mat-divider>
+    <button mat-raised-button color="primary" type="submit" class="margin-top-3">{{ 'LBL_CADASTRE' | translate }}</button>
+
+
+  </form>
+</sc-actionbar>

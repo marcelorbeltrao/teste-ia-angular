@@ -1,0 +1,12 @@
+.full-width-table {
+  width: 100%;
+}
+.mat-elevation-z8 {
+  margin: 16px;
+  overflow: hidden;
+  display: block;
+}
+
+.mat-mdc-button-base{
+  border: 1px solid red !important;
+}

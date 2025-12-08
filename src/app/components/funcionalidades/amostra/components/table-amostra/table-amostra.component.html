@@ -1,0 +1,48 @@
+<mat-card>
+  <mat-card-content>
+    <h6>Tabela com paginação</h6>
+    <div class="ss-grid">
+      <div class="col-12 ss-table ss-table-striped">
+
+        <table mat-table [dataSource]="dataSource" matSort class="ss-table-cozy ss-table-condensada">
+
+          <!-- Rank Column -->
+          <ng-container matColumnDef="rank">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Rank </th>
+            <td mat-cell *matCellDef="let element"> {{element.rank}} </td>
+          </ng-container>
+
+          <!-- Title Column -->
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Título </th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+          </ng-container>
+
+          <!-- Year Column -->
+          <ng-container matColumnDef="year">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Ano Lançamento </th>
+            <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+          </ng-container>
+
+          <!-- Rating Column -->
+          <ng-container matColumnDef="rating">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Avaliação </th>
+            <td mat-cell *matCellDef="let element"> {{element.rating}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+      </div>
+      <div class="col-12">
+
+        <mat-paginator appStylePaginator [showTotalPages]="3" [hidePageSize]="true" showFirstLastButtons
+          [length]="dataSource.data.length" [pageSize]="3" [pageSizeOptions]="[3, 5, 10, 20]"></mat-paginator>
+
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<br>
+<app-tabela-checkbox-amostra></app-tabela-checkbox-amostra>

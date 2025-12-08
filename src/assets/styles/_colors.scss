@@ -1,0 +1,85 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+// Brand =============================
+$color-theme-1: var(--color-brand-dusky);
+$color-highlight: var(--color-brand-main);
+$color-theme-2: var(--color-brand-complementary);
+$color-theme-3: var(--color-brand-supplementary);
+$color-theme-4: var(--color-brand-opposite);
+
+// System ============================
+$color-primary: $color-highlight;
+$color-success: var(--color-denotative-success-default);
+$color-success-2: var(--color-denotative-success-active);
+$color-warning: var(--color-denotative-warning-default);
+$color-warning-2: var(--color-denotative-warning-active);
+$color-danger: var(--color-denotative-error-default);
+$color-danger-2: var( --color-denotative-error-active);
+$color-selection: var(--color-denotative-success-lightest);
+
+// Grays ============================
+$color-base-1: var( --color-surface-background-low);
+$color-background: var( --color-surface-background-medium);
+$color-base-2: var(--athens-gray-200);
+$color-base-3: var(--athens-gray-300);
+$color-base-4: var(--athens-gray-400);
+$color-base-5: var(--athens-gray-500);
+$color-base-6: var(--athens-gray-950);
+
+// Neutral ============================
+$color-dark: $color-base-6;
+$color-light: $color-base-1;
+
+// Material Map Colors ================
+$mat-primary: (
+  50: #e0f3f2,
+  100: #b1e2dc,
+  200: #7dd0c6,
+  300: #44bdae,
+  400: #00ae9d,
+  // PRIMARY
+  500: #009f8b,
+  600: #00927e,
+  700: #00816d,
+  800: #00715f,
+  900: #005542,
+  contrast: (
+    50: $color-dark,
+    100: $color-dark,
+    200: $color-dark,
+    300: $color-dark,
+    400: $color-dark,
+    500: $color-light,
+    600: $color-light,
+    700: $color-light,
+    800: $color-light,
+    900: $color-light,
+  ),
+);
+$mat-accent: $mat-primary;
+$mat-warn: (
+  50: #feebef,
+  100: #fcced4,
+  200: #ec9c9d,
+  300: #e17678,
+  400: #eb5757,
+  // PRIMARY
+  500: #f0483f,
+  600: #e13f3d,
+  700: #cf3637,
+  800: #c22f30,
+  900: #b32425,
+  contrast: (
+    50: $color-dark,
+    100: $color-dark,
+    200: $color-dark,
+    300: $color-dark,
+    400: $color-dark,
+    500: $color-dark,
+    600: $color-dark,
+    700: $color-light,
+    800: $color-light,
+    900: $color-light,
+  ),
+);

@@ -1,0 +1,17 @@
+.cards {
+  border-bottom: var(--border-width-hairline) solid
+    var(--color-surface-stroke-low);
+  padding-bottom: var(--spacing-xxxs);
+  align-items: center;
+  margin-bottom: var(--spacing-quarck) !important;
+
+  /* stylelint-disable selector-type-no-unknown */
+  input,
+  sc-button {
+    margin-bottom: var(--spacing-quarck);
+  }
+}
+
+.cards:last-child {
+  margin-bottom: var(--spacing-xxs);
+}

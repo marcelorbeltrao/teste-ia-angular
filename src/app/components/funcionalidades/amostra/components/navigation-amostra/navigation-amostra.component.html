@@ -1,0 +1,122 @@
+<ng-template #headerTemplate>
+  <div class="ss-group-inline">
+    <button mat-raised-button class="ss-btn" color="primary" (click)="onCadastre()">
+      <span class="icon cicle-plus"></span>
+      Cadastrar  
+    </button>
+    <button mat-stroked-button class="ss-btn" color="primary" (click)="onPrint()">
+      Imprimir
+      <mat-icon>print</mat-icon>
+    </button>
+    <button mat-flat-button class="ss-btn" color="primary" (click)="onExport()">
+      Exportar
+      <mat-icon>get_app</mat-icon>
+    </button>
+  </div>
+</ng-template>
+
+
+<ng-template #sidebarTemplate>
+  <div class="padding-x-3 padding-y-3">
+    <h4>Eu só apareço quando a Sidebar estiver aberta.</h4>
+    <p>testePhasellus hendrerit mattis erat, in elementum augue rutrum non. Fusce nibh mauris, molestie sit amet odio id, accumsan luctus libero.</p>
+    <div class="ss-grid">
+      <div class="col-12">
+        <button mat-raised-button color="primary" (click)="closeSidebar()">
+          Fechar Sidebar
+        </button>
+      </div>
+      <div class="col-12">
+        <button mat-stroked-button color="primary" (click)="closeSidebar()">
+          Exemplo dois botões
+        </button>
+      </div>      
+</div>
+  </div>
+</ng-template>
+
+
+<mat-card>
+  <mat-card-content>
+
+    <div class="ss-grid">
+      <div class="col-12">
+        <h6>Modal</h6>
+        <p>Modal de confirmação e exemplo de modal com abertura de componente.</p>
+      </div>
+      <div class="col-4">
+        <button mat-raised-button color="primary" (click)="onModalConfirm()">
+          Abrir Modal Confirmação
+        </button>
+      </div>
+      <div class="col-4">
+        <button mat-raised-button color="primary" (click)="onModalCustomized()">
+          Abrir Modal Customizado
+        </button>
+      </div>
+    </div>
+
+    <div class="ss-grid">
+      <div class="col-12">
+        <h6>Actionbar</h6>
+        <p>O componente de actionbar pode ser utilizado para detalhar o item de uma lista, um formulário simples entre outros usos.</p>
+      </div>
+      <div class="col-4">
+        <button mat-raised-button color="primary" (click)="onActionbar()">
+          Abrir Actionbar
+        </button>
+      </div>
+    </div>
+
+    <div class="ss-grid">
+      <div class="col-12">
+        <h6>Header</h6>
+        <p>No Header você pode adicionar templates customizados e principalmente botões de ação.</p>
+      </div>
+      <div class="col-4">
+        <button mat-raised-button color="primary" (click)="showHeader()">
+          Mostrar header template
+        </button>
+      </div>
+      <div class="col-4">
+        <button mat-raised-button color="primary" (click)="removeHeader()">
+          Remover header template
+        </button>
+      </div>
+    </div>
+
+    <div class="ss-grid">
+      <div class="col-12">
+        <h6>Sidebar</h6>
+        <p>
+          A Sidebar é principalmente utilizada quando queremos ter uma barra lateral fixa.
+          Nela podemos ter por exemplo um formulário de filtro de listagem, aberta no "onInit" e fechada no "ngOnDestroy" do componente.
+        </p>
+      </div>
+      <div class="col-4">
+        <button mat-raised-button color="primary" (click)="onSidebar()">
+          Mostrar Sidebar
+        </button>
+      </div>
+      <div class="col-4">
+        <button mat-raised-button color="primary" (click)="closeSidebar()">
+          Fechar Sidebar
+        </button>
+      </div>
+    </div>
+
+    <div class="ss-grid">
+      <div class="col-12">
+        <h6>Toolbar</h6>
+      </div>
+      <div class="col-1">
+        <div class="app-toolbar">
+              <sc-toolbar [items]="itemsToolbar">
+
+              </sc-toolbar>
+          </div>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

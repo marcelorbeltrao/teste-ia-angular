@@ -1,0 +1,18 @@
+<sc-actionbar width="medium" [title]="'LBL_USER_DETAIL_TITLE' | translate">
+
+  <div class="ss-grid">
+    <div class="col-12 cards ss-grid">
+      <div class="col-4" [translate]="'LBL_USER_NAME'"></div>
+      <div class="col-8"> {{usuario.firstName}} </div>
+    </div>
+    <div class="col-12 cards ss-grid">
+      <div class="col-4" [translate]="'LBL_USER_DISPLAY_NAME'"></div>
+      <div class="col-8"> {{usuario.lastName}} </div>
+    </div>
+    <div class="col-12 cards ss-grid">
+      <div class="col-4" [translate]="'LBL_USER_ADDRESS'"></div>
+      <div class="col-8"> {{usuario.address}} </div>
+    </div>
+  </div>
+
+</sc-actionbar>

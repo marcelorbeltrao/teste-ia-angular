@@ -1,0 +1,37 @@
+<sc-root>
+  <main id="app" class="app-grid">
+    <!-- Navbar area -->
+    <!-- Navbar -->
+    <div class="app-navbar">
+      <sc-navbar
+        title="Seed Project"
+        [homeRoute]="'/'"
+        [user]="user$ | async"
+        [hasMultiInstituition]="false"
+        [items]="itemsNavbar"
+        [version]="version"
+        (itemClick)="onItemClick($event)"
+        (logout)="logout()"
+      >
+      </sc-navbar>
+    </div>
+
+    <div class="app-toolbar">
+      <sc-container-toolbar></sc-container-toolbar>
+    </div>
+
+    <!-- Problema no componente header -->
+    <header class="app-header">
+      <sc-header></sc-header>
+    </header>
+    <!-- Content area -->
+    <section class="app-content" [class.grid-col-span-2]="isClosed() | async">
+      <router-outlet></router-outlet>
+      <div id="action-bar-container" class="hidden"></div>
+      <div id="alert-container"></div>
+    </section>
+    <aside class="app-sidebar" [hidden]="isClosed() | async">
+      <sc-sidebar-container #sidebar></sc-sidebar-container>
+    </aside>
+  </main>
+</sc-root>

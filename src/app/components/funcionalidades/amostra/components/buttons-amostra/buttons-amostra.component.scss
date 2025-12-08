@@ -1,0 +1,36 @@
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: var(--font-size-sm);
+  margin-left: var(--spacing-nano);
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: var(--spacing-xxxl);
+}
+
+ul {
+  list-style-type: none;
+  margin-top: var(--spacing-quarck);
+}

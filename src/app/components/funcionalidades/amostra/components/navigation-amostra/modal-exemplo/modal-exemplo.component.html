@@ -1,0 +1,14 @@
+<sc-modal [headerTitle]="parametros.titulo" width="small">
+
+  <div class="ss-grid padding-x-3 padding-y-3">
+    <div class="col-12">
+      {{ parametros.conteudo }}
+    </div>
+    <div class="col-12">
+        <button mat-raised-button color="primary" (click)="closeModal()">
+          Fechar modal
+        </button>
+    </div>
+  </div>
+
+</sc-modal>

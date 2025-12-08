@@ -1,0 +1,84 @@
+$spacing-map: (
+  '0': 0,
+  '1': 4px,
+  '2': 8px,
+  '3': 16px,
+  '4': 24px,
+  '5': 32px,
+);
+
+@mixin spacing-classes {
+  @each $key, $spacing in $spacing-map {
+    .margin-all-#{$key} {
+      margin: $spacing !important;
+    }
+
+    .margin-x-#{$key} {
+      margin-left: $spacing !important;
+      margin-right: $spacing !important;
+    }
+
+    .margin-y-#{$key} {
+      margin-top: $spacing !important;
+      margin-bottom: $spacing !important;
+    }
+
+    .margin-top-#{$key} {
+      margin-top: $spacing !important;
+    }
+
+    .margin-right-#{$key} {
+      margin-right: $spacing !important;
+    }
+
+    .margin-bottom-#{$key} {
+      margin-bottom: $spacing !important;
+    }
+
+    .margin-left-#{$key} {
+      margin-left: $spacing !important;
+    }
+
+    .padding-all-#{$key} {
+      padding: $spacing !important;
+    }
+
+    .padding-x-#{$key} {
+      padding-left: $spacing !important;
+      padding-right: $spacing !important;
+    }
+
+    .padding-y-#{$key} {
+      padding-top: $spacing !important;
+      padding-bottom: $spacing !important;
+    }
+
+    .padding-top-#{$key} {
+      padding-top: $spacing !important;
+    }
+
+    .padding-right-#{$key} {
+      padding-right: $spacing !important;
+    }
+
+    .padding-bottom-#{$key} {
+      padding-bottom: $spacing !important;
+    }
+
+    .padding-left-#{$key} {
+      padding-left: $spacing !important;
+    }
+
+    .gap-#{$key} {
+      gap: $spacing;
+    }
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .full-height {
+    height: 100%;
+  }
+}

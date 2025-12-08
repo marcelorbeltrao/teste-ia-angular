@@ -1,0 +1,34 @@
+@use "@angular/material" as mat;
+
+$sisbr3-typography: var(--font-sicoob-sans), "Roboto", "Helvetica Neue",
+  "sans-serif";
+$sisbr3-typography: mat.define-typography-config(
+  $font-family: $sisbr3-typography,
+  $headline-5:
+    mat.define-typography-level(
+      $font-size: var(--font-size-xl),
+      $font-weight: var(--font-weight-medium),
+      $font-family: var(--font-sicoob-sans),
+    ),
+  $headline-6:
+    mat.define-typography-level(
+      $font-size: var(--font-size-lg),
+    ),
+  $subtitle-1:
+    mat.define-typography-level(
+      $font-size: var(--font-size-md),
+    ),
+  $body-1:
+    mat.define-typography-level(
+      $font-size: var(--font-size-md),
+    ),
+  $body-2:
+    mat.define-typography-level(
+      $font-size: var(--font-size-md),
+    ),
+  $button:
+    mat.define-typography-level(
+      $font-size: var(--font-size-md),
+      $font-weight: var(--font-weight-normal),
+    ),
+);

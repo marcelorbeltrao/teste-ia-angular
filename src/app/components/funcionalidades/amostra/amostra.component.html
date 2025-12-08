@@ -1,0 +1,281 @@
+<div class="padding-all-3">
+
+  <mat-tab-group xmlns="http://www.w3.org/1999/html">
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="icon ballon-dots"></span> Sobre
+      </ng-template>
+      <mat-card class="padding-all-4">
+        <h6>Angular Material</h6>
+        <p>
+          Para projetos <b>Sisbr 3.0</b> utilizando o <b>Angular 11</b> o <b>Sicoob</b> disponibilizou uma
+          biblioteca de componente visuais <b>@sicoob/ui</b>.
+          Novos projetos desenvolvidos em <b>Angular 15</b> utilizarão principalmente para formulários e listas,
+          componentes do <a href="https://material.angular.io/components/categories" target="_blank">Angular
+            Material Components</a>,
+          ficando a cargo do <b>@sicoob/ui</b> apenas componentes estruturais como modal, sidebar, header, navbar
+          entre outros.
+        </p>
+
+        <h6>Design System</h6>
+        <p>
+          No link do <a href="https://storybook.sicoob.com.br/" target="_blank">Sicoob Design System</a>
+          disponibilizamos informações importantes de layout, grid, palheta de cores e fontes. Mas no capítulo de
+          componentes desconsidere os relacionados a formulários.
+        </p>
+
+        <h6>NgRx/Redux</h6>
+        <p>
+          Esse projeto está configurado com o <a href="https://ngrx.io/" target="_blank">NgRx</a>. Fica a critério
+          de cada equipe utilizar ou não. Apenas recomendamos o uso com sabedoria, pois alguns dos problemas que o
+          NgRx se propõe a resolver pode ser resolvido nativamente pelo Angular.
+        </p>
+
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="icon profile-user"></span> Usuário
+      </ng-template>
+      <mat-card class="padding-all-4">
+
+        <div>
+
+          <h6>Dados usuário logado:</h6>
+
+          <img src="{{ (user$ | async)?.avatar.foto }}" alt=""><br/>
+
+          <b>Nome usuário: </b> {{ (user$ | async)?.nome }}<br/>
+          <b>CPF usuário: </b>{{ (user$ | async)?.cpf }}<br/>
+          <b>Data hora último login: </b>{{ (user$ | async)?.dataHoraUltimoLogin }}<br/>
+          <b>Email: </b>{{ (user$ | async)?.email }}<br/>
+          <b>Id instituição: </b>{{ (user$ | async)?.idInstituicao }}<br/>
+          <b>Id instituição origem: </b>{{ (user$ | async)?.idInstituicaoOrigem }}<br/>
+          <b>Id unidade instituição origem: </b>{{ (user$ | async)?.idUnidadeInstOrigem }}<br/>
+          <b>Id unidade instituição: </b>{{ (user$ | async)?.idUnidadeInstituicao }}<br/>
+          <b>Login: </b>{{ (user$ | async)?.login }}<br/>
+          <b>Número cooperativa: </b>{{ (user$ | async)?.numeroCooperativa }}<br/>
+
+          <div>
+            <h6>Permissões do usuário:</h6>
+            <div *ngFor="let permissao of (user$ | async)?.permissoes">
+              <b>Caminho: </b>{{ permissao.caminho }}<br/>
+              <b>Descrição: </b>{{ permissao.descricao }}<br/>
+              <b>Label: </b>{{ permissao.label }}<br/>
+              <b>Nome: </b>{{ permissao.nome }}<br/>
+              <b>Ordem: </b>{{ permissao.ordem }}<br/>
+              <b>Tipo: </b>{{ permissao.tipo }}<br/>
+              <br>
+            </div>
+          </div>
+
+        </div>
+
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab
+      tooltip="Angular Material buttons are native <button> or <a> elements enhanced with Material Design styling and ink ripples.">
+      <ng-template mat-tab-label>
+        <span class="icon hand-click"></span> Botões
+      </ng-template>
+      <mat-card>
+        <app-buttons-amostra></app-buttons-amostra>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab
+      tooltip="The mat-table provides a Material Design styled data-table that can be used to display rows of data.">
+      <ng-template mat-tab-label>
+        <span class="icon table-pen"></span> Tabelas
+      </ng-template>
+      <app-table-amostra></app-table-amostra>
+    </mat-tab>
+
+    <mat-tab
+      tooltip="Angular Material buttons are native <button> or <a> elements enhanced with Material Design styling and ink ripples.">
+      <ng-template mat-tab-label>
+        <span class="icon doc-list"></span> Listas
+      </ng-template>
+      <app-list-amostra></app-list-amostra>
+    </mat-tab>
+
+    <mat-tab tooltip="Generates a component with a Material Design data table that supports sorting and pagination">
+      <ng-template mat-tab-label>
+        <span class="icon graph-bar"></span> Dashboard
+      </ng-template>
+      <app-dashboard-amostra></app-dashboard-amostra>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="icon type-field"></span> Inputs
+      </ng-template>
+      <app-input-amostra></app-input-amostra>
+    </mat-tab>
+
+    <mat-tab
+      tooltip="Creates a component with a responsive Material Design sidenav and a toolbar for showing the app name">
+      <ng-template mat-tab-label>
+        <span class="icon globe-map"></span> Navegação
+      </ng-template>
+      <app-navigation-amostra></app-navigation-amostra>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="icon coment-star"></span> Tooltip
+      </ng-template>
+      <app-tootip-amostra></app-tootip-amostra>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="icon date-arrow"></span> Datepicker
+      </ng-template>
+      <app-date-amostra></app-date-amostra>
+    </mat-tab>
+
+    <!--  <mat-tab>-->
+    <!--    <ng-template mat-tab-label>-->
+    <!--      <mat-icon class="tab-icon">date_range</span>Mascara-->
+    <!--    </ng-template>-->
+    <!--    <mat-card class="example-card ">-->
+    <!--      <form [formGroup]="formGroup" class=" ">-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>CPF ou CNPJ</mat-label>-->
+    <!--        <input matInput formControlName="cpf_cnpj" mask="000.000.000-00||00.000.000/0000-00" showMaskTyped="true" />-->
+    <!--        <mat-hint>Validar formato de CPF ou CNPJ</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Telefone</mat-label>-->
+    <!--        <input matInput formControlName="phone" mask="(00) 0000-0000||(00) 0 0000-0000" showMaskTyped="true" />-->
+    <!--        <mat-hint>Formato de número de telefone</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Percentual</mat-label>-->
+    <!--        <input matInput formControlName="percent" mask="percent" suffix="%" showMaskTyped="true" />-->
+    <!--        <mat-hint>Formato de percentual</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Tempo</mat-label>-->
+    <!--        <input matInput formControlName="time" mask="Hh:m0:s0" showMaskTyped="true" />-->
+    <!--        <mat-hint>Validar formato de 24 horas</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Data</mat-label>-->
+    <!--        <input matInput formControlName="date" mask="d0/M0/0000" showMaskTyped="true" />-->
+    <!--        <mat-hint>Formato de data</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Separador</mat-label>-->
+    <!--        <input matInput formControlName="separator" mask="separator" thousandSeparator="." showMaskTyped="true" />-->
+    <!--        <mat-hint>Separador de milhar com ponto</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Decimal Limitado</mat-label>-->
+    <!--        <input matInput formControlName="limited_decimal" mask="separator.2" separatorLimit="1000" showMaskTyped="true" />-->
+    <!--        <mat-hint>Limitando o número de dígitos antes do ponto decimal</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Zeros ao Fim</mat-label>-->
+    <!--        <input matInput formControlName="add_zeros" mask="separator.2" showMaskTyped="true" />-->
+    <!--        <mat-hint>Adicionar zeros ao fim</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Entrada Segura</mat-label>-->
+    <!--        <input placeholder="Secure input" matInput formControlName="secure" mask="XXX/X0/0000" />-->
+    <!--        <mat-hint>Ocultar símbolos na entrada</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Validação de Controle</mat-label>-->
+    <!--        <input matInput formControlName="validation_control" mask="00 00"  />-->
+    <!--        <mat-hint>Validação do controle do formulário</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Sufixo</mat-label>-->
+    <!--        <input matInput formControlName="suffix" suffix="$" mask="0000" />-->
+    <!--        <mat-hint>Adicionar sufixo</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Prefixo</mat-label>-->
+    <!--        <input matInput formControlName="prefix" prefix="+7" mask="(000) 000 00 00" />-->
+    <!--        <mat-hint>Adicionar prefixo</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Placeholder Personalizado</mat-label>-->
+    <!--        <input matInput formControlName="placeholder" mask="(000) 000-0000" prefix="+7" placeHolderCharacter="*" />-->
+    <!--        <mat-hint>Caractere de placeholder personalizado</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Números Negativos</mat-label>-->
+    <!--        <input matInput formControlName="negative_numbers" mask="separator.2" />-->
+    <!--        <mat-hint>Permitir números negativos</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Padrão Personalizado</mat-label>-->
+    <!--        <input matInput formControlName="custom_pattern" mask="(000-000)" />-->
+    <!--        <mat-hint>Padrão personalizado</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Caracteres Especiais</mat-label>-->
+    <!--        <input matInput formControlName="special_characters" mask="[00]\\[000]" />-->
+    <!--        <mat-hint>Caracteres especiais</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Máscara de IP</mat-label>-->
+    <!--        <input matInput formControlName="ip" mask="IP" showMaskTyped="true" />-->
+    <!--        <mat-hint>Validar o formato de um endereço IP</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Símbolo Personalizado</mat-label>-->
+    <!--        <input matInput formControlName="custom_symbol" mask="B00" />-->
+    <!--        <mat-hint>Padrão personalizado com símbolo</mat-hint>-->
+    <!--      </mat-form-field>-->
+
+
+
+    <!--      <mat-form-field class="spaced-field">-->
+    <!--        <mat-label>Número com Máscara</mat-label>-->
+    <!--        <input matInput formControlName="number" mask="999-999.99" showMaskTyped="true" />-->
+    <!--        <mat-hint>Insira um número</mat-hint>-->
+    <!--      </mat-form-field>-->
+    <!--      </form>-->
+
+
+    <!--    </mat-card>-->
+
+
+    <!--  </mat-tab>-->
+
+    <!-- <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">view_module</span> Tabela com Seleção
+      </ng-template>
+      <app-tabela-checkbox-amostra></app-tabela-checkbox-amostra>
+    </mat-tab> -->
+
+
+  </mat-tab-group>
+
+</div>

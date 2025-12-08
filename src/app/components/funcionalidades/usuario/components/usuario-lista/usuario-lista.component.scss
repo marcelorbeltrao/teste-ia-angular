@@ -1,0 +1,35 @@
+.tab-icon {
+  margin-right: var(--spacing-nano);
+}
+
+
+.example-card {
+  margin: var(--spacing-sm);
+  max-width: 600px;
+}
+
+.spaced-field {
+  margin-bottom: var(--spacing-xxxs) /* Adiciona uma margem inferior de 16px a cada campo */
+}
+
+.mat-date-range-picker-popup {
+  width: 500px !important;
+}
+
+.date-field {
+  width: 100%;
+}
+
+.date-in-range {
+  background-color: #e0f7fa !important; /* Cor de fundo para datas dentro do intervalo */
+}
+
+table {
+  width: 100%;
+}
+
+.mat-column-select {
+  overflow: initial;
+}
+
+

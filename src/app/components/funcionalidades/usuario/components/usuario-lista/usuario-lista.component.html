@@ -1,0 +1,62 @@
+<ng-template #headerTemplate>
+  <div class="ss-group-inline">
+    <button mat-raised-button color="primary" (click)="onAdd()">
+      {{ 'LBL_ADD' | translate }}
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</ng-template>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h5>{{ 'LBL_USER_LIST_TITLE' | translate }}</h5>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div class="ss-grid">
+      <div class="col-12 ss-table ss-table-striped">
+
+        <table mat-table [dataSource]="dataSource" matSort class="ss-table-cozy ss-table-condensada">
+          <!-- Title Column -->
+          <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'LBL_NAME' | translate }} </th>
+            <td *matCellDef="let element"> {{element.firstName}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td *matCellDef="let element" class="text-align-right">
+              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="onDetail(element)">
+                  <mat-icon>person</mat-icon>
+                  <span>{{ 'LBL_DETAIL' | translate }}</span>
+                </button>
+                <button mat-menu-item (click)="onDelete(element)">
+                  <mat-icon>delete</mat-icon>
+                  <span>{{ 'LBL_DELETE' | translate }}</span>
+                </button>
+              </mat-menu>
+            </td>
+          </ng-container>
+
+        </table>
+
+      </div>
+      <div class="col-12">
+
+        <mat-paginator [hidePageSize]="true" showFirstLastButtons [length]="dataSource.data.length" [pageSize]="3"
+          [pageSizeOptions]="[3, 5, 10, 20]"></mat-paginator>
+
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

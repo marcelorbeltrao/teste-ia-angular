@@ -1,0 +1,80 @@
+<div class="ss-grid">
+  <div class="col-12">
+    <mat-card class="padding-all-5">
+      <div class="ss-grid">
+        <div class="col-3">
+          <img src="../../../assets/images/intro.svg" width="200" />
+        </div>
+        <div class="col-9">
+          <h2>Eu sou SEED!</h2>
+          <p>
+            Um projeto desenvolvido em Angular 15 que você pode usar como base
+            para seus trabalhos futuros. Aqui você encontra alguns exemplos de
+            componentes e formulários.
+          </p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div class="col-4">
+    <mat-card class="padding-all-4">
+      <h6>Componentes</h6>
+      <p>
+        Veja separadamente exemplos de implementação dos nossos componentes.
+      </p>
+      <button
+        mat-raised-button
+        color="primary"
+        text="Rotear para componente padrão material sicoob"
+        routerLink="/amostra"
+      >
+        Acessar
+      </button>
+    </mat-card>
+  </div>
+  <div class="col-4">
+    <mat-card class="padding-all-4">
+      <h6>Exemplo de formulário</h6>
+      <p>
+        Veja o processo de crud completo aplicado em nosso modelo de formulário.
+      </p>
+      <button
+        mat-raised-button
+        color="primary"
+        text="Rotear para componente formulário padrão material sicoob"
+        routerLink="/usuario"
+      >
+        Exemplo de Formulário
+      </button>
+    </mat-card>
+  </div>
+  <div class="col-4">
+    <mat-card class="padding-all-4">
+      <h6>Permissionamento</h6>
+      <p>
+        Veja abaixo a aplicação de tipo permissionamento do usuário em contexto.
+      </p>
+      <button
+        mat-stroked-button
+        text="Apenas se usuario possui 'FNCCONSULTAROTA1'"
+        *ngxPermissionsOnly="'FNCCONSULTAROTA1'"
+      >
+        FNCCONSULTAROTA1
+      </button>
+      <button
+        mat-stroked-button
+        text="Apenas se usuario possui 'FNCINEXISTENTE'"
+        *ngxPermissionsOnly="'FNCINEXISTENTE'"
+      >
+        FNCINEXISTENTE
+      </button>
+      <button
+        mat-stroked-button
+        text="Exceto se usuario possui 'FNCINCLUIRROTA1'"
+        *ngxPermissionsExcept="'FNCCONSULTAROTA1'"
+      >
+        FNCCONSULTAROTA1
+      </button>
+    </mat-card>
+  </div>
+</div>

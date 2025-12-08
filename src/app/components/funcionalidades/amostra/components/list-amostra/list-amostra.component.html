@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-content>
+
+    <h6>Com seleção múltipla</h6>
+    <mat-selection-list #shoes>
+      <mat-list-option *ngFor="let shoe of typesOfShoes">
+        {{shoe}}
+      </mat-list-option>
+    </mat-selection-list>
+
+    <p>
+      Opção selecionada: {{shoes.selectedOptions.selected.length}}
+    </p>
+  </mat-card-content>
+</mat-card>
+<mat-card class="margin-top-4">
+  <mat-card-content>
+    <h6>Com seleção única</h6>
+    <mat-selection-list #shoes2 [multiple]="false">
+      <mat-list-option *ngFor="let shoe of typesOfShoes2" [value]="shoe">
+        {{shoe}}
+      </mat-list-option>
+    </mat-selection-list>
+    <p>
+      Opção selecionada: {{shoes2.selectedOptions.hasValue() ? shoes2.selectedOptions.selected[0].value : 'None'}}
+    </p>
+
+  </mat-card-content>
+</mat-card>
