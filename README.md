@@ -7,7 +7,7 @@ Os itens abaixo devem estar instalados e configurados:
 - Instale o Git
 
 //testeAAAA
-ASASDA
+ASASDAsdfsadfad
 ## Configuração do arquivo .npmrc
 
 As configurações devem ser realizadas editando o arquivo `C:\Users\[user_name]\.npmrc`
