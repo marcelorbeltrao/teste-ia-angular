@@ -5,7 +5,9 @@ Os itens abaixo devem estar instalados e configurados:
 - Instale o Node.js versão 16.16.0
 - Instale o Angular CLI versão 15.2.10
 - Instale o Git
-
+asdsds
+//testeAAAAasdasdsasasdasddasdasdasd
+ASASDAsdfsadfadhhasadasdadshasdas
 ## Configuração do arquivo .npmrc
 
 As configurações devem ser realizadas editando o arquivo `C:\Users\[user_name]\.npmrc`
