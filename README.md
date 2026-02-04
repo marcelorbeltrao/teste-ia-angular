@@ -6,7 +6,7 @@ Os itens abaixo devem estar instalados e configurados:
 - Instale o Angular CLI versão 15.2.10
 - Instale o Git
 asdsds
-//testeAAAAasdasds
+//testeAAAAasdasdsasdasd
 ASASDAsdfsadfadhhhh
 ## Configuração do arquivo .npmrc
 
